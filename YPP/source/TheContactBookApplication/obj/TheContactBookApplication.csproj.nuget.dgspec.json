@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj": {}
+    "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj": {
+    "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
+        "projectUniqueName": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
         "projectName": "TheContactBookApplication",
-        "projectPath": "C:\\Projects\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
+        "projectPath": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
         "packagesPath": "C:\\Users\\WojciechMichalak\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\YPP\\source\\TheContactBookApplication\\obj\\",
+        "outputPath": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

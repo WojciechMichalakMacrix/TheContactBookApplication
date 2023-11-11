@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7teE6UxqxNb+zew9oNRLFBFNwP8skL2co4WaK7rYpzSGj+vzC4yf5BL86cWYmrAZFoGGoPWK4tIcvl86d9vIlw==",
+  "dgSpecHash": "umuJA4KZ4r8vZTguy4JYuHHXRpEu36XCNyWPg1nPENNeHVl+qaWSZ1WoPpc9bZcLxxGGwxFsEEay8twGtNY5jw==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
+  "projectFilePath": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\TheContactBookApplication.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
