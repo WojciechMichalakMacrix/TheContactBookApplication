@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheContactBookApplication", "TheContactBookApplication.csproj", "{609DE7DE-8ADE-4C56-8425-152317B55D3C}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ContactsDatabase", "..\ContactsDatabase\ContactsDatabase.sqlproj", "{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{609DE7DE-8ADE-4C56-8425-152317B55D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{609DE7DE-8ADE-4C56-8425-152317B55D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{609DE7DE-8ADE-4C56-8425-152317B55D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7FA8AC-246E-4D70-BEDC-ABB809CA36FF}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
