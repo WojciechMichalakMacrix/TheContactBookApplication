@@ -1,9 +1,13 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@using TheContactBookApplication.Components;
 
-<h1>Hello, world!</h1>
+<PageTitle> The Contact Book </PageTitle>
 
-Welcome to your new app.
+<div class="header">
+    The Contact Book
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<ContactsContainer />
+
+
