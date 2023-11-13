@@ -9,5 +9,5 @@
     [Postal Code ] TEXT NOT NULL, 
     [Town ] TEXT NOT NULL, 
     [Phone Number ] INT NOT NULL, 
-    [Date of Birth] TIMESTAMP NOT NULL
+    [Date of Birth] DATE NOT NULL
 )

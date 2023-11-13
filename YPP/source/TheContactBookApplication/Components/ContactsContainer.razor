@@ -1,7 +1,25 @@
-﻿<div class="contacts-container">
-    container
+﻿@using TheContactBookApplication.Models;
+@using TheContactBookApplication.Services;
+
+@inject IContactsInfoProvider contactsInfoProvider;
+
+<div class="contacts-container">
+    
+    <Contact />
+
 </div>
 
 @code {
 
+    public List<ContactModel>? Contacts { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadDataAsync();
+    }
+
+    public async Task LoadDataAsync()
+    {
+        Contacts = await contactsInfoProvider.GetContactsInfoAsync();
+    }
 }

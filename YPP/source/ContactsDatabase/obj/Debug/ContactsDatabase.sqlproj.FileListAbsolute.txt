@@ -1,0 +1,10 @@
+C:\Projects\YPP\YPP\source\ContactsDatabase\bin\Debug\ContactsDatabase.dacpac
+C:\Projects\YPP\YPP\source\ContactsDatabase\bin\Debug\ContactsDatabase.dll
+C:\Projects\YPP\YPP\source\ContactsDatabase\bin\Debug\ContactsDatabase.pdb
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\ContactsDatabase.sqlproj.AssemblyReference.cache
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\Model.xml
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\refactor.xml
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\postdeploy.sql
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\predeploy.sql
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\ContactsDatabase.dll
+C:\Projects\YPP\YPP\source\ContactsDatabase\obj\Debug\ContactsDatabase.pdb

@@ -1,11 +1,17 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using TheContactBookApplication.Data;
+using TheContactBookApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.AddTransient<IContactsInfoProvider, ContactsInfoProvider>();
+
+builder.Services.AddTransient<IContactsDbContext, ContactsDbContext>();
 
 var app = builder.Build();
 
