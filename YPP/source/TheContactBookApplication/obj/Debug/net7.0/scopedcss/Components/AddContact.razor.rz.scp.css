@@ -1,0 +1,22 @@
+.add-contact-container[b-o8yzzgn5mc] {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.add-contact-button[b-o8yzzgn5mc] {
+    border-radius: 7px;
+    text-align: center;
+    background-color: lawngreen;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.material-symbols-outlined[b-o8yzzgn5mc] {
+    margin: auto;
+    font-size: 2.5rem;
+}
+
+

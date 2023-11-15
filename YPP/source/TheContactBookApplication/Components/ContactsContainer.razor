@@ -4,14 +4,33 @@
 @inject IContactsInfoProvider contactsInfoProvider;
 
 <div class="contacts-container">
-    
+
     <Contact />
+
+    @if (Contacts != null)
+    {
+        @foreach (var contact in Contacts)
+        {
+            <Contact ContactModel="contact" />
+        }
+    }
+
+    @if(WantToAdd == true)
+    {
+        <Contact WantAddContact="@WantToAdd" />
+    }
+
+    <AddContact WantToAddChanged="@GetWantToAddValue"/>
+
+
 
 </div>
 
 @code {
 
     public List<ContactModel>? Contacts { get; set; }
+
+    public bool WantToAdd { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -21,5 +40,10 @@
     public async Task LoadDataAsync()
     {
         Contacts = await contactsInfoProvider.GetContactsInfoAsync();
+    }
+
+    public void GetWantToAddValue(bool wantToAdd)
+    {
+        WantToAdd = wantToAdd;
     }
 }

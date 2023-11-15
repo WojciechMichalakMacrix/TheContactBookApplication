@@ -107,3 +107,5 @@ C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\refint\The
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\TheContactBookApplication.pdb
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\TheContactBookApplication.genruntimeconfig.cache
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\ref\TheContactBookApplication.dll
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\Contact.razor.rz.scp.css
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\AddContact.razor.rz.scp.css

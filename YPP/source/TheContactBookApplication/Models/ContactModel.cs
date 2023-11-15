@@ -22,7 +22,5 @@
 
         public DateTime DateOfBirth { get; set; }
 
-        public IList<ContactModelProperties> Properties { get; set; } = new List<ContactModelProperties>();
-
     }
 }

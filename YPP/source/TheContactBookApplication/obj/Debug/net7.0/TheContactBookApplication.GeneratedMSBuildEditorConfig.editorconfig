@@ -20,13 +20,17 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/Contact.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/AddContact.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRDb250YWN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-o8yzzgn5mc
+
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-fbxl8xesr6
 
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/ContactsContainer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0c0NvbnRhaW5lci5yYXpvcg==

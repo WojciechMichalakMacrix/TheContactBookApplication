@@ -1,5 +1,162 @@
-﻿<h3>Contact</h3>
+﻿@using TheContactBookApplication.Models;
+@using TheContactBookApplication.Data;
+
+@inject ContactsDbContext contactsDbContext
+
+@if (ContactModel == null && WantAddContact == false)
+{
+    <div class="title">
+        <table>
+            <tr>
+                <td> First Name </td>
+                <td> Last Name </td>
+                <td> Street Name </td>
+                <td> House Number </td>
+                <td> Apartment Number </td>
+                <td> Postal Code </td>
+                <td> Town </td>
+                <td> Phone Number </td>
+                <td> Date Of Birth </td>
+                <td> Age </td>
+            </tr>
+        </table>
+    </div>
+}
+@if (ContactModel != null)
+{
+    <div class="contact">
+        <table>
+            <tr>
+                <td> @ContactModel.FirstName </td>
+                <td> @ContactModel.LastName </td>
+                <td> @ContactModel.StreetName </td>
+                <td> @ContactModel.HouseNumber </td>
+                <td> @ApartmentNumber </td>
+                <td> @ContactModel.PostalCode </td>
+                <td> @ContactModel.Town </td>
+                <td> @ContactModel.PhoneNumber </td>
+                <td> @DateOfBirth </td>
+                <td> @Age </td>
+            </tr>
+        </table>
+    </div>
+}
+@if (WantAddContact == true)
+{
+    <div class="edit-form">
+        <EditForm Model="@NewContactModel" OnValidSubmit="SubmitForm" class="editform-class">
+            <DataAnnotationsValidator />
+
+            <InputText id="firstname" @bind-Value="NewContactModel.FirstName" />
+            <ValidationMessage For="@(() => NewContactModel.FirstName)" />
+
+            <InputText id="lastname" @bind-Value="NewContactModel.LastName" />
+            <ValidationMessage For="@(() => NewContactModel.LastName)" />
+
+            <InputText id="lastname" @bind-Value="NewContactModel.StreetName" />
+            <ValidationMessage For="@(() => NewContactModel.StreetName)" />
+
+            <InputNumber id="lastname" @bind-Value="NewContactModel.HouseNumber" />
+            <ValidationMessage For="@(() => NewContactModel.HouseNumber)" />
+
+            <InputNumber id="lastname" @bind-Value="NewContactModel.ApartmentNumber" />
+            <ValidationMessage For="@(() => NewContactModel.ApartmentNumber)" />
+
+            <InputText id="lastname" @bind-Value="NewContactModel.PostalCode" />
+            <ValidationMessage For="@(() => NewContactModel.PostalCode)" />
+
+            <InputText id="lastname" @bind-Value="NewContactModel.Town" />
+            <ValidationMessage For="@(() => NewContactModel.Town)" />
+
+            <InputNumber id="lastname" @bind-Value="NewContactModel.PhoneNumber" />
+            <ValidationMessage For="@(() => NewContactModel.PhoneNumber)" />
+
+            <InputDate id="lastname" @bind-Value="NewContactModel.DateOfBirth" />
+            <ValidationMessage For="@(() => NewContactModel.DateOfBirth)" />
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </EditForm>
+    </div>
+
+    <style>
+        .editform-class {
+            display: flex;
+            gap: 2.6rem;
+            margin: 1rem;
+        }
+
+        input {
+            width: 8rem;
+        }
+    </style>
+}
+
 
 @code {
+    [Parameter]
+    public ContactModel? ContactModel { get; set; }
 
+    public ContactModel? NewContactModel { get; set; } = new ContactModel();
+
+    [Parameter]
+    public bool WantAddContact { get; set; } = false;
+
+    public string? ApartmentNumber { get; set; }
+
+    public string? DateOfBirth { get; set; }
+
+    public double Age { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        CheckIfApartmentNumberExists();
+        DeleteTimestamp();
+        CountAge();
+    }
+
+    void CheckIfApartmentNumberExists()
+    {
+        if (ContactModel != null && ContactModel.ApartmentNumber != null)
+        {
+            ApartmentNumber = ContactModel.ApartmentNumber.ToString();
+        }
+        else
+        {
+            ApartmentNumber = "-";
+        }
+    }
+
+    void DeleteTimestamp()
+    {
+        if (ContactModel != null)
+        {
+            DateOfBirth = ContactModel.DateOfBirth.ToString("dd/MM/yyyy");
+        }
+    }
+
+    void CountAge()
+    {
+        if (ContactModel != null)
+        {
+            var today = DateTime.UtcNow.Date;
+
+            while (today.CompareTo(ContactModel.DateOfBirth) >= 0)
+            {
+                Age++;
+                today = today.AddYears(-1);
+            }
+            today = today.AddYears(1);
+            Age--;
+        }
+    }
+
+    private async Task SubmitForm()
+    {
+        if (NewContactModel != null)
+        {
+            contactsDbContext.ContactModels.Add(NewContactModel);
+            await contactsDbContext.SaveChangesAsync();
+        }
+    }
 }

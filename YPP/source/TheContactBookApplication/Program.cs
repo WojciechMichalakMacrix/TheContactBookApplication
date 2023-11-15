@@ -11,7 +11,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.Services.AddTransient<IContactsInfoProvider, ContactsInfoProvider>();
 
-builder.Services.AddTransient<IContactsDbContext, ContactsDbContext>();
+builder.Services.AddSingleton<ContactsDbContext>();
 
 var app = builder.Build();
 

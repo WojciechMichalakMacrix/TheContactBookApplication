@@ -1,10 +1,91 @@
+/* _content/TheContactBookApplication/Components/AddContact.razor.rz.scp.css */
+.add-contact-container[b-o8yzzgn5mc] {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.add-contact-button[b-o8yzzgn5mc] {
+    border-radius: 7px;
+    text-align: center;
+    background-color: lawngreen;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.material-symbols-outlined[b-o8yzzgn5mc] {
+    margin: auto;
+    font-size: 2.5rem;
+}
+
+
+/* _content/TheContactBookApplication/Components/Contact.razor.rz.scp.css */
+.title[b-fbxl8xesr6] {
+    background-color: #C9D2DD;
+    padding: 0.5rem 0 0.5rem 0;
+    border-radius: 7px;
+}
+
+    .title table[b-fbxl8xesr6] {
+        color: #303030;
+        font-weight: 600;
+    }
+
+table[b-fbxl8xesr6] {
+    table-layout: fixed;
+    width: 105rem;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(255,255,255, 0.7);
+}
+
+td:nth-child(5)[b-fbxl8xesr6] {
+    width: 12rem;
+}
+
+.contact table[b-fbxl8xesr6] {
+    color: black;
+}
+
+.contact[b-fbxl8xesr6] {
+    padding: 0.5rem 0 0.5rem 0;
+    border-radius: 7px;
+}
+
+.contact:nth-child(2n+1)[b-fbxl8xesr6] {
+    background-color: #cacaca;
+}
+
+.edit-form[b-fbxl8xesr6] {
+    display: flex;
+    flex-direction: row;
+    width: 2rem;
+}
+
+.form-input[b-fbxl8xesr6] {
+    display: flex;
+}
+
+form[b-fbxl8xesr6] {
+    display: flex;
+}
+
+#MyEditForm[b-fbxl8xesr6] {
+    background-color: yellow;
+}
+
+.MyEditClass[b-fbxl8xesr6] {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 /* _content/TheContactBookApplication/Components/ContactsContainer.razor.rz.scp.css */
 .contacts-container[b-in1dmtrj43] {
-    background-color: red;
-    margin: 0 15rem 0 15rem;
+    width: 105rem;
 }
 /* _content/TheContactBookApplication/Pages/Index.razor.rz.scp.css */
 .header[b-r0enttl3uq] {
+    width: 105rem;
     display: flex;
     font-size: 2.5rem;
     font-weight: 600;

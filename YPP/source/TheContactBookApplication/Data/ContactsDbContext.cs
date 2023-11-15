@@ -4,7 +4,7 @@ using TheContactBookApplication.Models;
 
 namespace TheContactBookApplication.Data
 {
-    public class ContactsDbContext : DbContext, IContactsDbContext
+    public class ContactsDbContext : DbContext
     {
         protected readonly IConfiguration Configuration;
 
