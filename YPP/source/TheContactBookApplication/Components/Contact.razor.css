@@ -33,25 +33,3 @@ td:nth-child(5) {
 .contact:nth-child(2n+1) {
     background-color: #cacaca;
 }
-
-.edit-form {
-    display: flex;
-    flex-direction: row;
-    width: 2rem;
-}
-
-.form-input {
-    display: flex;
-}
-
-form {
-    display: flex;
-}
-
-#MyEditForm {
-    background-color: yellow;
-}
-
-.MyEditClass {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-}

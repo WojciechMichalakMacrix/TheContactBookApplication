@@ -17,7 +17,7 @@
 
     @if(WantToAdd == true)
     {
-        <Contact WantAddContact="@WantToAdd" />
+        <Contact WantAddContact="@WantToAdd" ContactsChanged="ReloadContactList" />
     }
 
     <AddContact WantToAddChanged="@GetWantToAddValue"/>
@@ -45,5 +45,11 @@
     public void GetWantToAddValue(bool wantToAdd)
     {
         WantToAdd = wantToAdd;
+    }
+
+    public async Task ReloadContactList()
+    {
+        WantToAdd = false;
+        await LoadDataAsync();
     }
 }

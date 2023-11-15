@@ -47,31 +47,31 @@
         <EditForm Model="@NewContactModel" OnValidSubmit="SubmitForm" class="editform-class">
             <DataAnnotationsValidator />
 
-            <InputText id="firstname" @bind-Value="NewContactModel.FirstName" />
+            <InputText id="firstname" @bind-Value="NewContactModel.FirstName" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.FirstName)" />
 
-            <InputText id="lastname" @bind-Value="NewContactModel.LastName" />
+            <InputText id="lastname" @bind-Value="NewContactModel.LastName" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.LastName)" />
 
-            <InputText id="lastname" @bind-Value="NewContactModel.StreetName" />
+            <InputText id="lastname" @bind-Value="NewContactModel.StreetName" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.StreetName)" />
 
-            <InputNumber id="lastname" @bind-Value="NewContactModel.HouseNumber" />
+            <InputNumber id="lastname" @bind-Value="NewContactModel.HouseNumber" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.HouseNumber)" />
 
-            <InputNumber id="lastname" @bind-Value="NewContactModel.ApartmentNumber" />
+            <InputNumber id="lastname" @bind-Value="NewContactModel.ApartmentNumber" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.ApartmentNumber)" />
 
-            <InputText id="lastname" @bind-Value="NewContactModel.PostalCode" />
+            <InputText id="lastname" @bind-Value="NewContactModel.PostalCode" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.PostalCode)" />
 
-            <InputText id="lastname" @bind-Value="NewContactModel.Town" />
+            <InputText id="lastname" @bind-Value="NewContactModel.Town" class="form-control"/>
             <ValidationMessage For="@(() => NewContactModel.Town)" />
 
-            <InputNumber id="lastname" @bind-Value="NewContactModel.PhoneNumber" />
+            <InputNumber id="lastname" @bind-Value="NewContactModel.PhoneNumber" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.PhoneNumber)" />
 
-            <InputDate id="lastname" @bind-Value="NewContactModel.DateOfBirth" />
+            <InputDate id="lastname" min="1900-01-01" max="@TodayInputFormat" @bind-Value="NewContactModel.DateOfBirth" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.DateOfBirth)" />
 
             <button type="submit" class="btn btn-primary">Save</button>
@@ -85,7 +85,7 @@
             margin: 1rem;
         }
 
-        input {
+        .form-control {
             width: 8rem;
         }
     </style>
@@ -101,17 +101,24 @@
     [Parameter]
     public bool WantAddContact { get; set; } = false;
 
+    public DateTime Today = DateTime.UtcNow.Date;
+
+    public string? TodayInputFormat { get; set; }
+
     public string? ApartmentNumber { get; set; }
 
     public string? DateOfBirth { get; set; }
 
     public double Age { get; set; }
 
+    [Parameter]
+    public EventCallback<ContactModel> ContactsChanged { get; set; }
+
 
     protected override void OnInitialized()
     {
         CheckIfApartmentNumberExists();
-        DeleteTimestamp();
+        PrepareDataFormat();
         CountAge();
     }
 
@@ -127,26 +134,29 @@
         }
     }
 
-    void DeleteTimestamp()
+    void PrepareDataFormat()
     {
         if (ContactModel != null)
         {
             DateOfBirth = ContactModel.DateOfBirth.ToString("dd/MM/yyyy");
         }
+
+        TodayInputFormat = Today.ToString("yyyy-MM-dd");
+
+        NewContactModel.DateOfBirth = DateTime.Now.Date;
     }
 
     void CountAge()
     {
         if (ContactModel != null)
         {
-            var today = DateTime.UtcNow.Date;
 
-            while (today.CompareTo(ContactModel.DateOfBirth) >= 0)
+            while (Today.CompareTo(ContactModel.DateOfBirth) >= 0)
             {
                 Age++;
-                today = today.AddYears(-1);
+                Today = Today.AddYears(-1);
             }
-            today = today.AddYears(1);
+            Today = Today.AddYears(1);
             Age--;
         }
     }
@@ -157,6 +167,7 @@
         {
             contactsDbContext.ContactModels.Add(NewContactModel);
             await contactsDbContext.SaveChangesAsync();
+            await ContactsChanged.InvokeAsync();
         }
     }
 }
