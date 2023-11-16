@@ -21,13 +21,22 @@ td:nth-child(5) {
     width: 12rem;
 }
 
+.contact {
+    display: flex;
+}
+
 .contact table {
     color: black;
 }
 
-.contact {
+.contact-row {
     padding: 0.5rem 0 0.5rem 0;
     border-radius: 7px;
+}
+
+.contact .delete-button{
+    padding-left: 0.5rem;
+    margin: auto;
 }
 
 .contact:nth-child(2n+1) {

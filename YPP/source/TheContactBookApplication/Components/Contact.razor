@@ -2,6 +2,7 @@
 @using TheContactBookApplication.Data;
 
 @inject ContactsDbContext contactsDbContext
+@inject NavigationManager _navigationManager
 
 @if (ContactModel == null && WantAddContact == false)
 {
@@ -25,20 +26,26 @@
 @if (ContactModel != null)
 {
     <div class="contact">
-        <table>
-            <tr>
-                <td> @ContactModel.FirstName </td>
-                <td> @ContactModel.LastName </td>
-                <td> @ContactModel.StreetName </td>
-                <td> @ContactModel.HouseNumber </td>
-                <td> @ApartmentNumber </td>
-                <td> @ContactModel.PostalCode </td>
-                <td> @ContactModel.Town </td>
-                <td> @ContactModel.PhoneNumber </td>
-                <td> @DateOfBirth </td>
-                <td> @Age </td>
-            </tr>
-        </table>
+        <div class="contact-row">
+            <table>
+                <tr>
+                    <td> @ContactModel.FirstName </td>
+                    <td> @ContactModel.LastName </td>
+                    <td> @ContactModel.StreetName </td>
+                    <td> @ContactModel.HouseNumber </td>
+                    <td> @ApartmentNumber </td>
+                    <td> @ContactModel.PostalCode </td>
+                    <td> @ContactModel.Town </td>
+                    <td> @ContactModel.PhoneNumber </td>
+                    <td> @DateOfBirth </td>
+                    <td> @Age </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="delete-button">
+            <button class="btn btn-danger" @onclick="DeleteContact">Delete</button>
+        </div>
     </div>
 }
 @if (WantAddContact == true)
@@ -65,7 +72,7 @@
             <InputText id="lastname" @bind-Value="NewContactModel.PostalCode" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.PostalCode)" />
 
-            <InputText id="lastname" @bind-Value="NewContactModel.Town" class="form-control"/>
+            <InputText id="lastname" @bind-Value="NewContactModel.Town" class="form-control" />
             <ValidationMessage For="@(() => NewContactModel.Town)" />
 
             <InputNumber id="lastname" @bind-Value="NewContactModel.PhoneNumber" class="form-control" />
@@ -168,6 +175,23 @@
             contactsDbContext.ContactModels.Add(NewContactModel);
             await contactsDbContext.SaveChangesAsync();
             await ContactsChanged.InvokeAsync();
+            NavigateToYourUrl();
         }
+    }
+
+    private async Task DeleteContact()
+    {
+        if (this.ContactModel != null)
+        {
+            contactsDbContext.ContactModels.Remove(this.ContactModel);
+            await contactsDbContext.SaveChangesAsync();
+            await ContactsChanged.InvokeAsync();
+            NavigateToYourUrl();
+        }
+    }
+
+    void NavigateToYourUrl()
+    {
+        _navigationManager.NavigateTo("", true);
     }
 }

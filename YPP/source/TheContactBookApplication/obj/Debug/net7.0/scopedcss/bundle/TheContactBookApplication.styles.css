@@ -45,13 +45,22 @@ td:nth-child(5)[b-fbxl8xesr6] {
     width: 12rem;
 }
 
+.contact[b-fbxl8xesr6] {
+    display: flex;
+}
+
 .contact table[b-fbxl8xesr6] {
     color: black;
 }
 
-.contact[b-fbxl8xesr6] {
+.contact-row[b-fbxl8xesr6] {
     padding: 0.5rem 0 0.5rem 0;
     border-radius: 7px;
+}
+
+.contact .delete-button[b-fbxl8xesr6]{
+    padding-left: 0.5rem;
+    margin: auto;
 }
 
 .contact:nth-child(2n+1)[b-fbxl8xesr6] {

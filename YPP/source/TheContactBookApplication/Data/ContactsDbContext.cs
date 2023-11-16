@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TheContactBookApplication.Components;
 using TheContactBookApplication.Models;
 
@@ -16,6 +17,7 @@ namespace TheContactBookApplication.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DBConnectionString"));
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
         public DbSet<ContactModel> ContactModels { get; set; }
     }

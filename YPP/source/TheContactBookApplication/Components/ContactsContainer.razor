@@ -11,7 +11,7 @@
     {
         @foreach (var contact in Contacts)
         {
-            <Contact ContactModel="contact" />
+            <Contact ContactModel="contact" ContactsChanged="ReloadContactList" />
         }
     }
 
