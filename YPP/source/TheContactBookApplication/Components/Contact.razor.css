@@ -23,6 +23,7 @@ td:nth-child(5) {
 
 .contact {
     display: flex;
+    border-radius: 7px;
 }
 
 .contact table {
@@ -32,7 +33,6 @@ td:nth-child(5) {
 .contact-row {
     height: 2.5rem;
     padding: 0.5rem 0 0.5rem 0;
-    border-radius: 7px;
 }
 
 .btn-danger {

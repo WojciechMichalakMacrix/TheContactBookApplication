@@ -53,6 +53,7 @@ td:nth-child(5)[b-fbxl8xesr6] {
 
 .contact[b-fbxl8xesr6] {
     display: flex;
+    border-radius: 7px;
 }
 
 .contact table[b-fbxl8xesr6] {
@@ -62,7 +63,6 @@ td:nth-child(5)[b-fbxl8xesr6] {
 .contact-row[b-fbxl8xesr6] {
     height: 2.5rem;
     padding: 0.5rem 0 0.5rem 0;
-    border-radius: 7px;
 }
 
 .btn-danger[b-fbxl8xesr6] {
