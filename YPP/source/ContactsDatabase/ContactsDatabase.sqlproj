@@ -58,7 +58,7 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="ContactsDatabase.refactorlog" />
+    <None Include="ContactsDatabase.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ContactsDatabase.publish.xml" />

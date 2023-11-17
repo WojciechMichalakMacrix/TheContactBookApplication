@@ -1,10 +1,9 @@
 ﻿@using TheContactBookApplication.Models;
 @using TheContactBookApplication.Data;
 
-@inject ContactsDbContext contactsDbContext
-@inject NavigationManager _navigationManager
+@inject ContactsDbContext contactsDbContext;
 
-@if (ContactModel == null && WantAddContact == false)
+@if (ContactModel == null && WantToAddContact == false)
 {
     <div class="title">
         <table>
@@ -25,7 +24,7 @@
 }
 @if (ContactModel != null)
 {
-    @if (WantEditContact == false)
+    @if (WantToEditContact == false)
     {
         <div class="contact">
             <div class="contact-row">
@@ -53,13 +52,13 @@
     else
     {
         <div class="contact">
-        <UserDataEdit ContactModel="@ContactModel" RefreshPage="NavigateToUrl"/>
+        <UserDataEdit ContactModel="@ContactModel" ContactEdited="GetEditedContact"/>
         </div>
     }
 }
-@if (WantAddContact == true)
+@if (WantToAddContact == true)
 {
-    <UserDataInput ContactAdded="GetNewContact" RefreshPage="NavigateToUrl" TodayInputFormat="@TodayInputFormat" />
+    <UserDataInput ContactAdded="GetNewContact" TodayInputFormat="@TodayInputFormat" />
 }
 
 
@@ -70,9 +69,12 @@
     public ContactModel? NewContactModel { get; set; } = new ContactModel();
 
     [Parameter]
-    public bool WantAddContact { get; set; } = false;
+    public bool WantToAddContact { get; set; } = false;
 
-    public bool WantEditContact { get; set; } = false;
+    [Parameter]
+    public int Iteration { get; set; }
+
+    public bool WantToEditContact { get; set; } = false;
 
     public DateTime Today = DateTime.UtcNow.Date;
 
@@ -85,7 +87,16 @@
     public double Age { get; set; }
 
     [Parameter]
-    public EventCallback<ContactModel> ContactsChanged { get; set; }
+    public EventCallback<ContactModel> ContactAdded { get; set; }
+
+    [Parameter]
+    public EventCallback<ContactModel> ContactEdited { get; set; }
+
+    [Parameter]
+    public EventCallback<int> ContactEditedId { get; set; }
+
+    [Parameter]
+    public EventCallback<ContactModel> ContactDeleted { get; set; }
 
 
     protected override void OnInitialized()
@@ -137,31 +148,39 @@
         if (this.ContactModel != null)
         {
             contactsDbContext.ContactModels.Remove(this.ContactModel);
-            await contactsDbContext.SaveChangesAsync();
-            await ContactsChanged.InvokeAsync();
-            NavigateToUrl();
+            await ContactDeleted.InvokeAsync();
         }
     }
 
-    // private async Task EditThisContact()
-    // {
-
-    // }
-
     void GetNewContact(ContactModel newContactModel)
     {
-        NewContactModel = newContactModel;
+        WantToAddContact = false;
 
-        ContactsChanged.InvokeAsync();
+        NewContactModel = newContactModel;
+        ContactAdded.InvokeAsync(NewContactModel);
+
+        if (NewContactModel != null)
+        {
+            contactsDbContext.ContactModels.Add(this.NewContactModel); 
+        }
+    }
+
+    void GetEditedContact(ContactModel newContactModel)
+    {
+        WantToEditContact = false;
+
+        NewContactModel = newContactModel;
+        ContactEditedId.InvokeAsync(Iteration);
+        ContactEdited.InvokeAsync(NewContactModel);
+
+        if (NewContactModel != null)
+        {
+            contactsDbContext.ContactModels.Update(this.NewContactModel);
+        }
     }
 
     void GetWantToEdit(bool wantToEdit)
     {
-        WantEditContact = wantToEdit;
-    }
-
-    void NavigateToUrl()
-    {
-        _navigationManager.NavigateTo("", true);
+        WantToEditContact = wantToEdit;
     }
 }

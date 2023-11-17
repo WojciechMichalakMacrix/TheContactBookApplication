@@ -1,0 +1,30 @@
+﻿@using TheContactBookApplication.Data;
+
+@inject ContactsDbContext contactsDbContext;
+@inject NavigationManager _navigationManager
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
+
+<div class="db-update-buttons-container">
+    <div class="save-button" @onclick="SaveChanges">
+        Save
+    </div>
+    <div class="cancel-button" @onclick="CancelChanges">
+        Cancel
+    </div>
+</div>
+
+@code {
+    async Task SaveChanges()
+    {
+        await contactsDbContext.SaveChangesAsync();
+        _navigationManager.NavigateTo("", true);
+    }
+
+    void CancelChanges()
+    {
+        _navigationManager.NavigateTo("", true);
+    }
+
+}

@@ -111,3 +111,4 @@ C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\AddContactButton.razor.rz.scp.css
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\DeleteContactButton.razor.rz.scp.css
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\EditContactButton.razor.rz.scp.css
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\DatabaseUpdateButtons.razor.rz.scp.css

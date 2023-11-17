@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope = b-fbxl8xesr6
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0c0NvbnRhaW5lci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-in1dmtrj43
 
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/DatabaseUpdateButtons.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhYmFzZVVwZGF0ZUJ1dHRvbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zf2i1xd1zt
+
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/DeleteContactButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWxldGVDb250YWN0QnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-d1o1gno492

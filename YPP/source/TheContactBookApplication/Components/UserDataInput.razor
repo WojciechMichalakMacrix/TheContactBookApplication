@@ -89,9 +89,6 @@
     public EventCallback<ContactModel> ContactAdded { get; set; }
 
     [Parameter]
-    public EventCallback<ContactModel> RefreshPage { get; set; }
-
-    [Parameter]
     public string? TodayInputFormat { get; set; }
 
     protected override void OnInitialized()
@@ -106,10 +103,10 @@
     {
         if (NewContactModel != null)
         {
-            contactsDbContext.ContactModels.Add(NewContactModel);
-            await contactsDbContext.SaveChangesAsync();
+            // contactsDbContext.ContactModels.Add(NewContactModel);
+            // await contactsDbContext.SaveChangesAsync();
             await ContactAdded.InvokeAsync(NewContactModel);
-            await RefreshPage.InvokeAsync();
+            // await RefreshPage.InvokeAsync();
         }
     }
 }

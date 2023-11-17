@@ -89,7 +89,7 @@
     public ContactModel? ContactModel { get; set; } 
 
     [Parameter]
-    public EventCallback<ContactModel> ContactAdded { get; set; }
+    public EventCallback<ContactModel> ContactEdited { get; set; }
 
     [Parameter]
     public EventCallback<ContactModel> RefreshPage { get; set; }
@@ -109,10 +109,10 @@
     {
         if (ContactModel != null)
         {
-            contactsDbContext.ContactModels.Update(ContactModel);
-            await contactsDbContext.SaveChangesAsync();
-            // await ContactAdded.InvokeAsync(ContactModel);
-            await RefreshPage.InvokeAsync();
+            // contactsDbContext.ContactModels.Update(ContactModel);
+            // await contactsDbContext.SaveChangesAsync();
+            await ContactEdited.InvokeAsync(ContactModel);
+            // await RefreshPage.InvokeAsync();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿.delete-contact-button {
+﻿.edit-contact-button {
     border-radius: 7px;
     text-align: center;
     background-color: dodgerblue;
@@ -11,7 +11,7 @@
     margin-left: 0.5rem;
 }
 
-    .delete-contact-button:hover {
+    .edit-contact-button:hover {
         background-color: blue;
         transition: all 200ms ease;
     }

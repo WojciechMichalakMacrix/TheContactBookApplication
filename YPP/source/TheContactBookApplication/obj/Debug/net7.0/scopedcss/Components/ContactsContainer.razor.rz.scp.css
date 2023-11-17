@@ -1,3 +1,12 @@
 .contacts-container[b-in1dmtrj43] {
     width: 105rem;
 }
+
+.db-update[b-in1dmtrj43] {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}

@@ -1,0 +1,40 @@
+﻿.db-update-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.save-button {
+    border-radius: 7px;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+    .save-button:hover {
+        background-color: blue;
+        transition: all 200ms ease;
+    }
+
+.cancel-button {
+    border-radius: 7px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+    .cancel-button:hover {
+        background-color: darkred;
+        transition: all 200ms ease;
+    }
