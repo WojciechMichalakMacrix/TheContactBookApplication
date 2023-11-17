@@ -108,4 +108,6 @@ C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\TheContact
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\TheContactBookApplication.genruntimeconfig.cache
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\ref\TheContactBookApplication.dll
 C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\Contact.razor.rz.scp.css
-C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\AddContact.razor.rz.scp.css
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\AddContactButton.razor.rz.scp.css
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\DeleteContactButton.razor.rz.scp.css
+C:\Projects\YPP\YPP\source\TheContactBookApplication\obj\Debug\net7.0\scopedcss\Components\EditContactButton.razor.rz.scp.css

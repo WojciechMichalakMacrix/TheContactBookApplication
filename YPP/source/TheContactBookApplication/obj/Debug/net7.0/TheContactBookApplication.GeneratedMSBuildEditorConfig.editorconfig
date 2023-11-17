@@ -20,13 +20,21 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/UserDataEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyRGF0YUVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/UserDataInput.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyRGF0YUlucHV0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/AddContact.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRDb250YWN0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-o8yzzgn5mc
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/AddContactButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBZGRDb250YWN0QnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3ngr44tqr7
 
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/Contact.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0LnJhem9y
@@ -35,6 +43,14 @@ build_metadata.AdditionalFiles.CssScope = b-fbxl8xesr6
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/ContactsContainer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb250YWN0c0NvbnRhaW5lci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-in1dmtrj43
+
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/DeleteContactButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWxldGVDb250YWN0QnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-d1o1gno492
+
+[C:/Projects/YPP/YPP/source/TheContactBookApplication/Components/EditContactButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFZGl0Q29udGFjdEJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-98eoe1q1h1
 
 [C:/Projects/YPP/YPP/source/TheContactBookApplication/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=

@@ -25,77 +25,41 @@
 }
 @if (ContactModel != null)
 {
-    <div class="contact">
-        <div class="contact-row">
-            <table>
-                <tr>
-                    <td> @ContactModel.FirstName </td>
-                    <td> @ContactModel.LastName </td>
-                    <td> @ContactModel.StreetName </td>
-                    <td> @ContactModel.HouseNumber </td>
-                    <td> @ApartmentNumber </td>
-                    <td> @ContactModel.PostalCode </td>
-                    <td> @ContactModel.Town </td>
-                    <td> @ContactModel.PhoneNumber </td>
-                    <td> @DateOfBirth </td>
-                    <td> @Age </td>
-                </tr>
-            </table>
-        </div>
+    @if (WantEditContact == false)
+    {
+        <div class="contact">
+            <div class="contact-row">
+                <table>
+                    <tr>
+                        <td> @ContactModel.FirstName </td>
+                        <td> @ContactModel.LastName </td>
+                        <td> @ContactModel.StreetName </td>
+                        <td> @ContactModel.HouseNumber </td>
+                        <td> @ApartmentNumber </td>
+                        <td> @ContactModel.PostalCode </td>
+                        <td> @ContactModel.Town </td>
+                        <td> @ContactModel.PhoneNumber </td>
+                        <td> @DateOfBirth </td>
+                        <td> @Age </td>
+                    </tr>
+                </table>
+            </div>
 
-        <div class="delete-button">
-            <button class="btn btn-danger" @onclick="DeleteContact">Delete</button>
+            <EditContactButton WantToEditChanged="GetWantToEdit" />
+
+            <DeleteContactButton DeleteContact="DeleteContact" />
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="contact">
+        <UserDataEdit ContactModel="@ContactModel" RefreshPage="NavigateToUrl"/>
+        </div>
+    }
 }
 @if (WantAddContact == true)
 {
-    <div class="edit-form">
-        <EditForm Model="@NewContactModel" OnValidSubmit="SubmitForm" class="editform-class">
-            <DataAnnotationsValidator />
-
-            <InputText id="firstname" @bind-Value="NewContactModel.FirstName" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.FirstName)" />
-
-            <InputText id="lastname" @bind-Value="NewContactModel.LastName" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.LastName)" />
-
-            <InputText id="lastname" @bind-Value="NewContactModel.StreetName" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.StreetName)" />
-
-            <InputNumber id="lastname" @bind-Value="NewContactModel.HouseNumber" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.HouseNumber)" />
-
-            <InputNumber id="lastname" @bind-Value="NewContactModel.ApartmentNumber" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.ApartmentNumber)" />
-
-            <InputText id="lastname" @bind-Value="NewContactModel.PostalCode" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.PostalCode)" />
-
-            <InputText id="lastname" @bind-Value="NewContactModel.Town" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.Town)" />
-
-            <InputNumber id="lastname" @bind-Value="NewContactModel.PhoneNumber" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.PhoneNumber)" />
-
-            <InputDate id="lastname" min="1900-01-01" max="@TodayInputFormat" @bind-Value="NewContactModel.DateOfBirth" class="form-control" />
-            <ValidationMessage For="@(() => NewContactModel.DateOfBirth)" />
-
-            <button type="submit" class="btn btn-primary">Save</button>
-        </EditForm>
-    </div>
-
-    <style>
-        .editform-class {
-            display: flex;
-            gap: 2.6rem;
-            margin: 1rem;
-        }
-
-        .form-control {
-            width: 8rem;
-        }
-    </style>
+    <UserDataInput ContactAdded="GetNewContact" RefreshPage="NavigateToUrl" TodayInputFormat="@TodayInputFormat" />
 }
 
 
@@ -107,6 +71,8 @@
 
     [Parameter]
     public bool WantAddContact { get; set; } = false;
+
+    public bool WantEditContact { get; set; } = false;
 
     public DateTime Today = DateTime.UtcNow.Date;
 
@@ -149,8 +115,6 @@
         }
 
         TodayInputFormat = Today.ToString("yyyy-MM-dd");
-
-        NewContactModel.DateOfBirth = DateTime.Now.Date;
     }
 
     void CountAge()
@@ -168,17 +132,6 @@
         }
     }
 
-    private async Task SubmitForm()
-    {
-        if (NewContactModel != null)
-        {
-            contactsDbContext.ContactModels.Add(NewContactModel);
-            await contactsDbContext.SaveChangesAsync();
-            await ContactsChanged.InvokeAsync();
-            NavigateToYourUrl();
-        }
-    }
-
     private async Task DeleteContact()
     {
         if (this.ContactModel != null)
@@ -186,11 +139,28 @@
             contactsDbContext.ContactModels.Remove(this.ContactModel);
             await contactsDbContext.SaveChangesAsync();
             await ContactsChanged.InvokeAsync();
-            NavigateToYourUrl();
+            NavigateToUrl();
         }
     }
 
-    void NavigateToYourUrl()
+    // private async Task EditThisContact()
+    // {
+
+    // }
+
+    void GetNewContact(ContactModel newContactModel)
+    {
+        NewContactModel = newContactModel;
+
+        ContactsChanged.InvokeAsync();
+    }
+
+    void GetWantToEdit(bool wantToEdit)
+    {
+        WantEditContact = wantToEdit;
+    }
+
+    void NavigateToUrl()
     {
         _navigationManager.NavigateTo("", true);
     }

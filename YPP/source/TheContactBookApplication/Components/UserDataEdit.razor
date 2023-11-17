@@ -1,0 +1,115 @@
+﻿@using TheContactBookApplication.Models;
+@using TheContactBookApplication.Data;
+
+@inject ContactsDbContext contactsDbContext
+
+<div class="edit-form">
+    <EditForm Model="@ContactModel" OnValidSubmit="SubmitForm" class="editform-class">
+        <DataAnnotationsValidator />
+
+        <div class="user-input">
+            <InputText id="firstname" @bind-Value="ContactModel.FirstName" class="form-control" placeholder=""/>
+            <ValidationMessage For="@(() => ContactModel.FirstName)" />
+        </div>
+
+        <div class="user-input">
+            <InputText id="lastname" @bind-Value="ContactModel.LastName" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.LastName)" />
+        </div>
+
+        <div class="user-input">
+            <InputText id="streetname" @bind-Value="ContactModel.StreetName" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.StreetName)" />
+        </div>
+
+        <div class="user-input">
+            <InputNumber id="housenumber" @bind-Value="ContactModel.HouseNumber" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.HouseNumber)" />
+        </div>
+
+        <div class="user-input">
+            <InputNumber id="apartmentnumber" @bind-Value="ContactModel.ApartmentNumber" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.ApartmentNumber)" />
+        </div>
+
+        <div class="user-input">
+            <InputText id="postalcode" @bind-Value="ContactModel.PostalCode" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.PostalCode)" />
+        </div>
+
+        <div class="user-input">
+            <InputText id="town" @bind-Value="ContactModel.Town" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.Town)" />
+        </div>
+
+        <div class="user-input">
+            <InputNumber id="phonenumber" @bind-Value="ContactModel.PhoneNumber" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.PhoneNumber)" />
+        </div>
+
+        <div class="user-input">
+            <InputDate id="dateofbirth" min="1900-01-01" max="@TodayInputFormat" @bind-Value="ContactModel.DateOfBirth" class="form-control" />
+            <ValidationMessage For="@(() => ContactModel.DateOfBirth)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </EditForm>
+</div>
+
+<style>
+    .editform-class {
+        display: flex;
+        gap: 2.6rem;
+        margin-left: 1.1rem;
+    }
+
+    .user-input {
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+
+    .validation-message {
+        width: 8rem;
+    }
+
+    .form-control {
+        width: 8rem;
+    }
+
+    .btn {
+        height: 2.5rem;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public ContactModel? ContactModel { get; set; } 
+
+    [Parameter]
+    public EventCallback<ContactModel> ContactAdded { get; set; }
+
+    [Parameter]
+    public EventCallback<ContactModel> RefreshPage { get; set; }
+
+    [Parameter]
+    public string? TodayInputFormat { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (ContactModel != null)
+        {
+            ContactModel.DateOfBirth = DateTime.UtcNow.Date;
+        }
+    }
+
+    private async Task SubmitForm()
+    {
+        if (ContactModel != null)
+        {
+            contactsDbContext.ContactModels.Update(ContactModel);
+            await contactsDbContext.SaveChangesAsync();
+            // await ContactAdded.InvokeAsync(ContactModel);
+            await RefreshPage.InvokeAsync();
+        }
+    }
+}

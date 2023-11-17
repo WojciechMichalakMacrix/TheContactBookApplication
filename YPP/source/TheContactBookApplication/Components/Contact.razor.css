@@ -30,13 +30,13 @@ td:nth-child(5) {
 }
 
 .contact-row {
+    height: 2.5rem;
     padding: 0.5rem 0 0.5rem 0;
     border-radius: 7px;
 }
 
-.contact .delete-button{
-    padding-left: 0.5rem;
-    margin: auto;
+.btn-danger {
+    padding: 0.5rem;
 }
 
 .contact:nth-child(2n+1) {
