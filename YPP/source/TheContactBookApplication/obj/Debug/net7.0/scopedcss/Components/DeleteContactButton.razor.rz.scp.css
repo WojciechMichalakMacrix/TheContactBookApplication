@@ -1,7 +1,7 @@
 .delete-contact-button[b-d1o1gno492] {
     border-radius: 7px;
     text-align: center;
-    background-color: red;
+    background-color: #bb0000;
     width: 2rem;
     height: 2rem;
     color: white;
@@ -12,7 +12,7 @@
 }
 
     .delete-contact-button:hover[b-d1o1gno492] {
-        background-color: darkred;
+        background-color: red;
         transition: all 200ms ease;
     }
 

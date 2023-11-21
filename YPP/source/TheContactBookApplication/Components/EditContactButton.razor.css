@@ -1,7 +1,7 @@
 ﻿.edit-contact-button {
     border-radius: 7px;
     text-align: center;
-    background-color: dodgerblue;
+    background-color: #3b3bb6;
     width: 2rem;
     height: 2rem;
     color: white;
@@ -12,7 +12,7 @@
 }
 
     .edit-contact-button:hover {
-        background-color: blue;
+        background-color: #0082ff;
         transition: all 200ms ease;
     }
 

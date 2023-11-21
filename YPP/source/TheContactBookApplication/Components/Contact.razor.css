@@ -1,5 +1,5 @@
 ﻿.title {
-    background-color: #C9D2DD;
+    background-color: #0004234a;
     padding: 0.5rem 0 0.5rem 0;
     border-radius: 7px;
 }
@@ -40,5 +40,9 @@ td:nth-child(5) {
 }
 
 .contact:nth-child(2n+1) {
-    background-color: #cacaca6d;
+    background-color: #0200232a;
+}
+
+.contact:nth-child(2n+2) {
+    background-color: #0300401a;
 }
