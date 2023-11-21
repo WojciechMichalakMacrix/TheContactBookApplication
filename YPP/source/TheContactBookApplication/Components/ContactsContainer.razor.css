@@ -1,12 +1,18 @@
 ﻿.contacts-container {
     width: 105rem;
+    margin-left: 4rem;
 }
 
 .db-update {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
+    justify-content: end;
+    margin: auto;
+}
+
+.db-update .text {
+    padding: 0.6rem;
+    padding-right: 2rem;
 }

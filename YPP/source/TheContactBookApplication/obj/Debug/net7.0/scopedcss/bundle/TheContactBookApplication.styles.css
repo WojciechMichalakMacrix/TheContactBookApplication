@@ -9,7 +9,7 @@
     border-radius: 7px;
     text-align: center;
     background-color: lawngreen;
-    width: 2.5rem;
+    width: 5rem;
     height: 2.5rem;
     color: white;
     cursor: pointer;
@@ -70,27 +70,32 @@ td:nth-child(5)[b-fbxl8xesr6] {
 }
 
 .contact:nth-child(2n+1)[b-fbxl8xesr6] {
-    background-color: #cacaca;
+    background-color: #cacaca6d;
 }
 /* _content/TheContactBookApplication/Components/ContactsContainer.razor.rz.scp.css */
 .contacts-container[b-in1dmtrj43] {
     width: 105rem;
+    margin-left: 4rem;
 }
 
 .db-update[b-in1dmtrj43] {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
+    justify-content: end;
+    margin: auto;
+}
+
+.db-update .text[b-in1dmtrj43] {
+    padding: 0.6rem;
+    padding-right: 2rem;
 }
 /* _content/TheContactBookApplication/Components/DatabaseUpdateButtons.razor.rz.scp.css */
 .db-update-buttons-container[b-zf2i1xd1zt] {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 1rem;
 }
 
 .save-button[b-zf2i1xd1zt] {
@@ -173,6 +178,7 @@ td:nth-child(5)[b-fbxl8xesr6] {
 /* _content/TheContactBookApplication/Pages/Index.razor.rz.scp.css */
 .header[b-r0enttl3uq] {
     width: 105rem;
+    margin-left: 4rem;
     display: flex;
     font-size: 2.5rem;
     font-weight: 600;

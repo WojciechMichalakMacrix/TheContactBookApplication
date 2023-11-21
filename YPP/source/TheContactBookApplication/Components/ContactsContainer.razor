@@ -13,7 +13,7 @@
         @for(int i = 0; i < Contacts.Count; i++)
         {
             var contact = Contacts[i];
-            <Contact ContactModel="contact" Iteration="@i" ContactEdited="EditContactLocally" ContactEditedId="GetEditedContactId"/>
+            <Contact ContactModel="contact" Iteration="@i" ContactEdited="EditContactLocally" ContactEditedId="GetEditedContactId" ContactDeleted="DeleteContactLocally"/>
         }
     }
 
@@ -21,13 +21,17 @@
     {
         <Contact WantToAddContact="@WantToAdd" ContactAdded="AddContactLocally" />
     }
-
-    <AddContactButton WantToAddChanged="@GetWantToAddValue"/>
-
+    else
+    {
+       <AddContactButton WantToAddChanged="@GetWantToAddValue"/> 
+    }
+    
     @if(DatabaseNeedsUpdate == true)
     {
         <div class="db-update"> 
-            Changes detected. Do you want to update the database?
+            <div class="text"> 
+                Changes detected. Do you want to update the database?
+            </div>
         <DatabaseUpdateButtons />
         </div>
     }
@@ -40,8 +44,6 @@
     public List<ContactModel>? Contacts { get; set; }
 
     public List<ContactModel>? DatabaseContacts { get; set; }
-
-    public ContactModel? EditedContact { get; set; }
 
     public int ContactId { get; set; }
 
@@ -80,10 +82,14 @@
 
     public async Task EditContactLocally(ContactModel editedContactModel)
     {
-        WantToAdd = false;
-
-        EditedContact = editedContactModel;
         Contacts[ContactId] = editedContactModel;
+
+        await DatabaseAndLocalComparison();
+    }
+
+    public async Task DeleteContactLocally(ContactModel deletedContactModel)
+    {
+        Contacts.Remove(deletedContactModel);
 
         await DatabaseAndLocalComparison();
     }
@@ -92,7 +98,11 @@
     {
         DatabaseContacts = await contactsInfoProvider.GetContactsInfoAsync();
 
-        if(DatabaseContacts != Contacts)
+        if(DatabaseContacts.Equals(Contacts))
+        {
+            DatabaseNeedsUpdate = false;
+        }
+        else
         {
             DatabaseNeedsUpdate = true;
         }

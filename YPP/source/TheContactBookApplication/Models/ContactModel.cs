@@ -20,7 +20,7 @@ namespace TheContactBookApplication.Models
 
         public int? ApartmentNumber { get; set; }
 
-        [Required]
+        [Required]  
         public string PostalCode { get; set; } = string.Empty;
 
         [Required]

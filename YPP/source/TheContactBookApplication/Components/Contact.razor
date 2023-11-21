@@ -52,7 +52,7 @@
     else
     {
         <div class="contact">
-        <UserDataEdit ContactModel="@ContactModel" ContactEdited="GetEditedContact"/>
+        <UserDataEdit ContactModel="@ContactModel" ContactEdited="GetEditedContact" />
         </div>
     }
 }
@@ -75,6 +75,10 @@
     public int Iteration { get; set; }
 
     public bool WantToEditContact { get; set; } = false;
+
+    public bool WasAdded { get; set; } = false;
+
+    public bool WasEdited { get; set; } = false;
 
     public DateTime Today = DateTime.UtcNow.Date;
 
@@ -148,13 +152,15 @@
         if (this.ContactModel != null)
         {
             contactsDbContext.ContactModels.Remove(this.ContactModel);
-            await ContactDeleted.InvokeAsync();
+            await ContactDeleted.InvokeAsync(this.ContactModel);
         }
     }
 
     void GetNewContact(ContactModel newContactModel)
     {
         WantToAddContact = false;
+
+        WasAdded = true;
 
         NewContactModel = newContactModel;
         ContactAdded.InvokeAsync(NewContactModel);
@@ -168,6 +174,8 @@
     void GetEditedContact(ContactModel newContactModel)
     {
         WantToEditContact = false;
+
+        WasEdited = true;
 
         NewContactModel = newContactModel;
         ContactEditedId.InvokeAsync(Iteration);

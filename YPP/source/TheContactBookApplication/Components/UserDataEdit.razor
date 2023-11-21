@@ -4,11 +4,11 @@
 @inject ContactsDbContext contactsDbContext
 
 <div class="edit-form">
-    <EditForm Model="@ContactModel" OnValidSubmit="SubmitForm" class="editform-class">
+    <EditForm Model="ContactModel" OnValidSubmit="SubmitForm" class="editform-class">
         <DataAnnotationsValidator />
 
         <div class="user-input">
-            <InputText id="firstname" @bind-Value="ContactModel.FirstName" class="form-control" placeholder=""/>
+            <InputText id="firstname" @bind-Value="ContactModel.FirstName" class="form-control" />
             <ValidationMessage For="@(() => ContactModel.FirstName)" />
         </div>
 
@@ -53,12 +53,13 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
-
-        <button class="btn btn-primary">Cancel</button>
     </EditForm>
 </div>
 
 <style>
+    .edit-form {
+        display: flex;
+    }
     .editform-class {
         display: flex;
         gap: 2.6rem;
@@ -89,6 +90,9 @@
     public ContactModel? ContactModel { get; set; } 
 
     [Parameter]
+    public ContactModel? OriginalContactModel { get; set; }
+
+    [Parameter]
     public EventCallback<ContactModel> ContactEdited { get; set; }
 
     [Parameter]
@@ -109,10 +113,7 @@
     {
         if (ContactModel != null)
         {
-            // contactsDbContext.ContactModels.Update(ContactModel);
-            // await contactsDbContext.SaveChangesAsync();
             await ContactEdited.InvokeAsync(ContactModel);
-            // await RefreshPage.InvokeAsync();
         }
     }
 }
