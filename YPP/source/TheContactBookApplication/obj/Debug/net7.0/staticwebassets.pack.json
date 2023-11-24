@@ -5,28 +5,12 @@
       "PackagePath": "staticwebassets\\TheContactBookApplication.bundle.scp.css"
     },
     {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background1920.jpg",
-      "PackagePath": "staticwebassets\\background1920.jpg"
+      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background.jpg",
+      "PackagePath": "staticwebassets\\background.jpg"
     },
     {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background1920color.jpg",
-      "PackagePath": "staticwebassets\\background1920color.jpg"
-    },
-    {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background1920soft.jpg",
-      "PackagePath": "staticwebassets\\background1920soft.jpg"
-    },
-    {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background2.jpg",
-      "PackagePath": "staticwebassets\\background2.jpg"
-    },
-    {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background21.jpg",
-      "PackagePath": "staticwebassets\\background21.jpg"
-    },
-    {
-      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background22.jpg",
-      "PackagePath": "staticwebassets\\background22.jpg"
+      "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\background_bright.jpg",
+      "PackagePath": "staticwebassets\\background_bright.jpg"
     },
     {
       "Id": "C:\\Projects\\YPP\\YPP\\source\\TheContactBookApplication\\wwwroot\\css\\bootstrap\\bootstrap.min.css",

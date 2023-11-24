@@ -7,33 +7,45 @@
 .save-button {
     border-radius: 7px;
     text-align: center;
-    background-color: dodgerblue;
+    background-color: blue;
+    width: 7rem;
+    height: 3rem;
     color: white;
     cursor: pointer;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
     transition: all 200ms ease;
 }
 
     .save-button:hover {
-        background-color: blue;
+        background-color: #2480ff;
         transition: all 200ms ease;
+    }
+
+    .save-button .text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-weight: 600;
+        padding: 0.6rem;
     }
 
 .cancel-button {
     border-radius: 7px;
     text-align: center;
-    background-color: red;
+    background-color: #cc0000;
+    width: 7rem;
+    height: 3rem;
     color: white;
     cursor: pointer;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
     transition: all 200ms ease;
 }
 
     .cancel-button:hover {
-        background-color: darkred;
+        background-color: red;
         transition: all 200ms ease;
+    }
+
+    .cancel-button .text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-weight: 600;
+        padding: 0.6rem;
     }

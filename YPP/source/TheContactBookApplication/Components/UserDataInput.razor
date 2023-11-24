@@ -103,10 +103,7 @@
     {
         if (NewContactModel != null)
         {
-            // contactsDbContext.ContactModels.Add(NewContactModel);
-            // await contactsDbContext.SaveChangesAsync();
             await ContactAdded.InvokeAsync(NewContactModel);
-            // await RefreshPage.InvokeAsync();
         }
     }
 }

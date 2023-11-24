@@ -60,6 +60,7 @@
     .edit-form {
         display: flex;
     }
+
     .editform-class {
         display: flex;
         gap: 2.6rem;
@@ -87,16 +88,10 @@
 
 @code {
     [Parameter]
-    public ContactModel? ContactModel { get; set; } 
-
-    [Parameter]
-    public ContactModel? OriginalContactModel { get; set; }
+    public ContactModel? ContactModel { get; set; }
 
     [Parameter]
     public EventCallback<ContactModel> ContactEdited { get; set; }
-
-    [Parameter]
-    public EventCallback<ContactModel> RefreshPage { get; set; }
 
     [Parameter]
     public string? TodayInputFormat { get; set; }

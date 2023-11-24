@@ -7,8 +7,8 @@
 .add-contact-button {
     border-radius: 7px;
     text-align: center;
-    background-color: lawngreen;
-    width: 5rem;
+    background-color: #29a829;
+    width: 6rem;
     height: 2.5rem;
     color: white;
     cursor: pointer;
@@ -16,13 +16,14 @@
 }
 
     .add-contact-button:hover {
-        background-color: forestgreen;
+        background-color: #34e600;
         transition: all 200ms ease;
     }
 
 .material-symbols-outlined {
-    margin: auto;
     font-size: 2.5rem;
+    font-weight: 600;
 }
+
 
 

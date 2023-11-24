@@ -20,13 +20,15 @@ namespace TheContactBookApplication.Models
 
         public int? ApartmentNumber { get; set; }
 
-        [Required]  
+        [Required]
+        [StringLength(6, ErrorMessage = "Provide PostalCode of format ## - ###.")]
         public string PostalCode { get; set; } = string.Empty;
 
         [Required]
         public string Town { get; set; } = string.Empty;
 
         [Required]
+        [Range(100000000, 999999999, ErrorMessage = "Provide PhoneNumber that contains 9 digits.")]
         public int PhoneNumber { get; set; }
 
         [Required]
