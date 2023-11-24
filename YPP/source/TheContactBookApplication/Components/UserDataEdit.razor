@@ -3,7 +3,9 @@
 
 @inject ContactsDbContext contactsDbContext
 
-<div class="edit-form">
+@if (ContactModel != null)
+{
+    <div class="edit-form">
     <EditForm Model="ContactModel" OnValidSubmit="SubmitForm" class="editform-class">
         <DataAnnotationsValidator />
 
@@ -55,6 +57,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </EditForm>
 </div>
+}
+
 
 <style>
     .edit-form {

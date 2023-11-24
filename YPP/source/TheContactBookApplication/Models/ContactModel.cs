@@ -21,7 +21,7 @@ namespace TheContactBookApplication.Models
         public int? ApartmentNumber { get; set; }
 
         [Required]
-        [StringLength(6, ErrorMessage = "Provide PostalCode of format ## - ###.")]
+        [StringLength(6, MinimumLength = 6, ErrorMessage = "Provide PostalCode of format ## - ###.")]
         public string PostalCode { get; set; } = string.Empty;
 
         [Required]
