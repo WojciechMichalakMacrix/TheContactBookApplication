@@ -89,15 +89,15 @@ td:nth-child(5)[b-fbxl8xesr6] {
     font-weight: 600;
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
     padding: 0.5rem;
-    background-color: #00042318;
+    background-color: #0004230e;
     border-radius: 5px;
 }
 
     .db-update-container .db-update[b-in1dmtrj43] {
         display: flex;
         flex-direction: column;
-        margin-left: auto;
     }
 
     .db-update-container .db-update .text[b-in1dmtrj43] {
@@ -114,15 +114,15 @@ td:nth-child(5)[b-fbxl8xesr6] {
     border-radius: 7px;
     text-align: center;
     background-color: blue;
-    width: 7rem;
-    height: 3rem;
+    width: 6rem;
+    height: 2.5rem;
     color: white;
     cursor: pointer;
     transition: all 200ms ease;
 }
 
     .save-button:hover[b-zf2i1xd1zt] {
-        background-color: #2480ff;
+        background-color: #006bff;
         transition: all 200ms ease;
     }
 
@@ -130,15 +130,15 @@ td:nth-child(5)[b-fbxl8xesr6] {
         font-size: 1.2rem;
         font-weight: 600;
         font-weight: 600;
-        padding: 0.6rem;
+        padding: 0.35rem;
     }
 
 .cancel-button[b-zf2i1xd1zt] {
     border-radius: 7px;
     text-align: center;
     background-color: #cc0000;
-    width: 7rem;
-    height: 3rem;
+    width: 6rem;
+    height: 2.5rem;
     color: white;
     cursor: pointer;
     transition: all 200ms ease;
@@ -153,7 +153,7 @@ td:nth-child(5)[b-fbxl8xesr6] {
         font-size: 1.2rem;
         font-weight: 600;
         font-weight: 600;
-        padding: 0.6rem;
+        padding: 0.35rem;
     }
 /* _content/TheContactBookApplication/Components/DeleteContactButton.razor.rz.scp.css */
 .delete-contact-button[b-d1o1gno492] {
@@ -208,8 +208,6 @@ td:nth-child(5)[b-fbxl8xesr6] {
     font-weight: 500;
     padding: 1rem;
     justify-content: center;
-    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
-    /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* _content/TheContactBookApplication/Shared/MainLayout.razor.rz.scp.css */

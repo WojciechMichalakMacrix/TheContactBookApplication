@@ -8,15 +8,15 @@
     border-radius: 7px;
     text-align: center;
     background-color: blue;
-    width: 7rem;
-    height: 3rem;
+    width: 6rem;
+    height: 2.5rem;
     color: white;
     cursor: pointer;
     transition: all 200ms ease;
 }
 
     .save-button:hover {
-        background-color: #2480ff;
+        background-color: #006bff;
         transition: all 200ms ease;
     }
 
@@ -24,15 +24,15 @@
         font-size: 1.2rem;
         font-weight: 600;
         font-weight: 600;
-        padding: 0.6rem;
+        padding: 0.35rem;
     }
 
 .cancel-button {
     border-radius: 7px;
     text-align: center;
     background-color: #cc0000;
-    width: 7rem;
-    height: 3rem;
+    width: 6rem;
+    height: 2.5rem;
     color: white;
     cursor: pointer;
     transition: all 200ms ease;
@@ -47,5 +47,5 @@
         font-size: 1.2rem;
         font-weight: 600;
         font-weight: 600;
-        padding: 0.6rem;
+        padding: 0.35rem;
     }
